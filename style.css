@@ -1,0 +1,109 @@
+*{
+    /*univarsal statement */
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+#wrapper{
+    /*height=100vh means full screen
+    overflow-x =hidden means not move in x axis
+    overflow-y=auto means move in y axis
+    */
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+/* this container for all img and heading
+heading come in CENTER=margin 0 auto 
+padding height 100 max-widhr=1200px means 
+width auto increase from 1200px tak uska bad overflow hojayega
+*/
+.container{
+    height: 100%;
+    max-width: 1200px;
+    margin:0 auto;
+    padding: 20px;
+}
+/*this for heading basically 
+text-align:center use for center heading
+other parameter given by use
+*/
+.container h1{
+    /* margin do kyu ha first for top and bottom second for right and left*/
+    margin:20px 0;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 3rem;
+}
+/* all img configuration code
+display flex use for all img come in horizontal x axis 
+flex-wrap wrap use for all img come in vertical downward
+justify centent space between means all img between have gap
+*/
+.gallery{
+   display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+/* this for card
+width 32% means you place 3 picture it mean 96 % for img and 4 for gapping
+overflow hidden means avoid overflow
+boarder radius for curve edges
+*/
+.card{
+    width: 32%;
+    position: relative;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow:hidden;
+}
+.card img{
+/* parent element ka size ka hojeyaga width 100 sa 
+parent element card=32 ha uska equal size ka img hojayega
+*/
+width: 100%;
+/*similar like width*/
+height: 100%;
+/*filter*/
+filter:grayscale(100%);
+/* shadow effect show*/
+box-shadow: 0 0 20px #333;
+object-fit: cover;
+}
+/* this for hold img effect
+transform means imgsize increase
+transtitio means timing to inc img
+shodow effect by filter*/
+.card:hover{
+    transform:scale(1.05);
+    filter: drop-shadow(0 0 10px #333);
+    transition: 1.3s;
+}
+/* hold kar na per img ka coller ana chahiya*/
+.card:hover img {
+    filter:grayscale(0%);
+}
+/* this code for caption in img */
+.card figcaption{
+    position: absolute;
+    bottom:0;
+    left: 0;
+    padding: 25px;
+    width: 100%;
+    height: 20%;
+    font-size: 16px;
+    font-size: 500;
+    font-weight: 500;
+    color: #fff;
+    /* not visible */
+    opacity:0;
+    border-radius: 0 0 10px 10px;
+    background: linear-gradient(0deg,rgba(0, 0, 0.5) 0%,rgba(255,255,255,0)100%);
+    transition: 1.3s;
+}
+/* caption visibnle with time */
+.card:hover figcaption{
+    opacity:1;
+    transform: scale(1.05);
+}
